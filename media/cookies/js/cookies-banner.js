@@ -1,0 +1,21 @@
+$("document").ready(function(){$.ajax({url:"https://www.cloudflare.com/cdn-cgi/trace",type:"POST",success:function(data){const regex=/loc=(\w+)/;const match=data.match(regex);if(match){const locValue=match[1];var eu=["AT","BE","BG","CY","HR","CZ","DK","EE","FI","FR","GR","HU","IE","IT","LV","LT","LU","MT","PL","PT","RO","SK","SI","ES","SE","NL","GB","IS","LI","NO","DE","ES","GB",];var euLang=eu.includes(locValue);if(euLang){if(localStorage.getItem("cookie_privacy_shown")){if(localStorage.getItem("cookie_privacy_shown")==="1"){loadThirdPartyJs();loadScript("https://t.webridge.net/js/lpcv.js?cid=6S5C6cmxTdof&pid=320",);}}else{alertCookie();}}else{loadThirdPartyJs();loadScript("https://t.webridge.net/js/lpcv.js?cid=6S5C6cmxTdof&pid=320",);}}},});function loadScript(url){var script=document.createElement("script");script.type="text/javascript";script.src=url;document.getElementsByTagName("head")[0].appendChild(script);}
+function alertCookie(){window.FJTools.loadCSS("/media/cookies/css/cookies-banner.css?v=10");$("footer").append('<div class="cookie_ban">\n'+
+'    <div class="cookie_title">Cookies 🍪</div>\n'+
+'    <p class="cookie_content">\n'+
+"        We use cookies to ensure that you get the best experience on our website. To learn more about use of cookies, please visit our\n"+
+'        <a href="/cookies.html">cookies policy</a>.\n'+
+"    </p>\n"+
+'    <div class="cookie_btn">\n'+
+'        <div class="accept">Accept all cookies</div>\n'+
+'        <div class="refuse">Reject all cookies</div>\n'+
+"    </div>\n"+
+"    </div>\n"+
+"</div>",);try{defaultAd();}catch(e){console.log(e,"defaultAd error");}
+$(".cookie_ban .accept").on("click",function(){$(".cookie_ban").hide();localStorage.setItem("cookie_privacy_shown","1");loadThirdPartyJs();loadScript("https://t.webridge.net/js/lpcv.js?cid=6S5C6cmxTdof&pid=320");try{setAd(true);}catch(e){console.log(e,"lpcv error");}});$(".cookie_ban .refuse").on("click",function(){$(".cookie_ban").hide();localStorage.setItem("cookie_privacy_shown","2");clearThirdPartyCookies();try{setAd(false);}catch(e){console.log(e,"lpcv error");}});}
+function loadScript(url){var script=document.createElement("script");script.type="text/javascript";script.src=url;script.async=true;script.defer=true;document.getElementsByTagName("head")[0].appendChild(script);}
+function loadThirdPartyJs(){(function(w,d,t,r,u){var f,n,i;(w[u]=w[u]||[]),(f=function(){var o={ti:"343035918"};(o.q=w[u]),(w[u]=new UET(o)),w[u].push("pageLoad");}),(n=d.createElement(t)),(n.src=r),(n.async=1),(n.onload=n.onreadystatechange=function(){var s=this.readyState;(s&&s!=="loaded"&&s!=="complete")||(f(),(n.onload=n.onreadystatechange=null));}),(i=d.getElementsByTagName(t)[0]),i.parentNode.insertBefore(n,i);})(window,document,"script","https://bat.bing.com/bat.js","uetq");(function(callback){var script=document.createElement("script");script.type="text/javascript";script.src="https://www.rentracks.jp/js/itp/rt.track.js?t="+new Date().getTime();script.defer=true;script.async=true;if(script.readyState){script.onreadystatechange=function(){if(script.readyState==="loaded"||script.readyState==="complete"){script.onreadystatechange=null;callback();}};}else{script.onload=function(){callback();};}
+document.getElementsByTagName("head")[0].appendChild(script);})(function(){});if(!window.afblpcvLpConf){window.afblpcvLpConf=[];}
+window.afblpcvLpConf.push({siteId:"6S5C6cmxTdof",});(function(){var VARemoteLoadOptions={whiteLabel:{id:8,siteId:2443,domain:"t.adotone.com"},locale:"en-US",mkt:true,};(function(c,o,n,v,e,r,l,y){c["VARemoteLoadOptions"]=e;(r=o.createElement(n)),(l=o.getElementsByTagName(n)[0]);r.async=1;r.src=v;l.parentNode.insertBefore(r,l);})(window,document,"script","https://cdn.adotone.com/javascripts/va.js",VARemoteLoadOptions,);})();}});function clearThirdPartyCookies(){var cookies=document.cookie.split(";");for(var i=0;i<cookies.length;i++){var cookie=cookies[i].trim();var cookieDomain=cookie.split("=")[0];if(!cookieDomain.endsWith(window.location.hostname)){var cookieName=cookie.split("=")[0];console.log(cookieName);document.cookie=cookieName+
+"=; expires=Thu, 01 Jan 1970 00:00:00 GMT; domain="+
+cookieDomain+
+"; path=/";}}}

@@ -1,0 +1,70 @@
+{
+  "name": "FlexClip Video Maker",
+  "short_name": "FlexClip",
+  "categories": [
+    "video",
+    "video editing",
+    "video production",
+    "video creation",
+    "productivity",
+    "utilities"
+  ],
+  "description": "Use FlexClip to create a stunning video with text and music in minutes. Choose from abundant ready-to-use video templates or start from scratch. No professional skills are required.",
+  "dir": "ltr",
+  "lang": "en-US",
+  "theme_color": "#252525",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "scope": "/",
+  "start_url": "/editor/?source=pwa",
+  "icons": [
+    {
+      "src": "https://resource.flexclip.com/pwa/72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://resource.flexclip.com/pwa/96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://resource.flexclip.com/pwa/128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://resource.flexclip.com/pwa/144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://resource.flexclip.com/pwa/152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://resource.flexclip.com/pwa/192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://resource.flexclip.com/pwa/384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "https://resource.flexclip.com/pwa/512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
