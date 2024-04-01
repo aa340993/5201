@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>img.onl – fast & easy image upload</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css?0001">
+    <link href="https://fonts.googleapis.com/css?family=Muli:400" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,600" rel="stylesheet">
+    <meta name="theme-color" content="#2196f3" />
+    <script async defer data-website-id="a9061c8d-9336-4c8f-a4c7-af72ab799f27" src="https://um.app.quest/script.js"></script>
+
+    <meta name="color-scheme" content="dark light">
+</head>
+
+<body>
+    <svg id="img_bg_icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+        <path d="M19 7v2.99s-1.99.01-2 0V7h-3s.01-1.99 0-2h3V2h2v3h3v2h-3zm-3 4V8h-3V5H5c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-8h-3zM5 19l3-4 2 3 3-4 4 5H5z" />
+        <path d="M0 0h24v24H0z" fill="none" />
+    </svg>
+
+    <header>
+        <h1>
+            <a id="logo" href="/">img.onl</a>
+        </h1>
+        <div id="logo_subtext">
+            fast & easy image&nbsp;upload
+        </div>
+    </header>
+    <main id="file_upload_area">
+        <div id="error_message">
+
+        </div>
+        <div id="drag_and_drop_header">
+                        <div id="drag_and_drop_text">
+                drag and drop&nbsp;images
+            </div>
+            <div>
+
+                <input id="file-select" type="file" name="imgFile" accept="image/*" multiple />
+                <label id="file-select-button" class="button" for="file-select">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z" />
+                    </svg>
+
+                    <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M0 0h24v24H0z" fill="none"/><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"/></svg> -->
+                    Select image
+                </label>
+            </div>
+
+            <div id="paste_text">
+                paste from&nbsp;clipboard
+            </div>
+        </div>
+        <div id="upload_confirm_dialog">
+            <div id="upload_confirm_dialog_title">
+                Confirm upload
+            </div>
+            <div id="upload_confirm_dialog_body">
+                <p>You can't upload images that:</p>
+                <ul>
+                    <li>you don't own the copyright to</li>
+                    <li>are against the law</li>
+                    <li>show NSFW content</li>
+                </ul>
+            </div>
+
+            <div id="upload_confirm_dialog_button_wrapper">
+                <p>
+                    <input type="checkbox" id="termsCheckbox"><label for="termsCheckbox">I've read and agree to the <a href="/terms" target="_blank">terms</a></label>
+                </p>
+                <button id="terms_agree_button" class="button" type="button" disabled>Continue</button>
+            </div>
+        </div>
+        <div id="result_wrapper">
+            <div id="uploading_status">
+                <span class="uploading_wrapper">
+                    uploading…
+                </span>
+                <span class="uploaded">
+                    Image uploaded!
+                </span>
+            </div>
+            <div id="result_img_wrapper">
+                <a id="result_img_wrapper_link" target="_blank">
+                    <img id="result_img" src="">
+                </a>
+            </div>
+
+            <div class="uploaded">
+                <p id="result_img_link_wrapper">
+                    <span class="noselect">Image URL: </span><a id="result_img_link" target="_blank">…</a>
+                </p>
+                <div>
+                    <button id="copy_url_btn" class="copy_url_btn button noselect" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M19,21H8V7H19M19,5H8A2,2 0 0,0 6,7V21A2,2 0 0,0 8,23H19A2,2 0 0,0 21,21V7A2,2 0 0,0 19,5M16,1H4A2,2 0 0,0 2,3V17H4V3H16V1Z" />
+                        </svg>
+                        <span id="copy_url_btn_text"></span>
+                    </button>
+                    <button id="show_qr_btn" class="copy_url_btn button noselect" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M3,11H5V13H3V11M11,5H13V9H11V5M9,11H13V15H11V13H9V11M15,11H17V13H19V11H21V13H19V15H21V19H19V21H17V19H13V21H11V17H15V15H17V13H15V11M19,19V15H17V19H19M15,3H21V9H15V3M17,5V7H19V5H17M3,3H9V9H3V3M5,5V7H7V5H5M3,15H9V21H3V15M5,17V19H7V17H5Z" />
+                        </svg>
+                        <span id="show_qr_btn">Show QR code</span>
+                    </button>
+                </div>
+                <div id="result_more_info">
+                    <p>
+                        Use the link above for downloading the image.
+                    </p>
+                </div>
+                <div class="new_upload_btn_wrapper">
+                    <button id="new_upload_btn" class="button" type="button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z" />
+                        </svg>
+                        Upload another image
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="multiple_upload_result_wrapper">
+
+            <div id="uploading_status_multiple">
+
+            </div>
+            <div id="upload_list">
+
+            </div>
+
+            <div class="new_upload_btn_wrapper">
+                <button id="multiple_new_upload_btn" class="button" type="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                        <path d="M9 16h6v-6h4l-7-7-7 7h4zm-4 2h14v2H5z"></path>
+                    </svg>
+                    Upload more images
+                </button>
+            </div>
+        </div>
+        <div id="more_info_text">
+            <div>
+                up&nbsp;to 64MB per&nbsp;image <span class="bullet">•</span> stored in&nbsp;original resolution
+            </div>
+            <!-- <div>
+                <br>
+                <span style="font-size: 0.95em;margin-top: 0.5em;display: block;">
+                    💡 · Placeholder images – <a href="https://placeholder.img.onl" target="_blank">placeholder.img.onl</a>
+                </span>
+            </div> -->
+        </div>
+        </div>
+    </main>
+    <div class="spacer">
+    </div>
+
+    <footer>
+        <a href="/my_uploads.html" onclick="event.preventDefault(); window.open('/my_uploads.html', '_blank', 'height=640,width=640');">my uploads</a>
+        –
+        <a href="/terms">terms</a>
+        –
+        <a href="/privacy">privacy</a>
+        –
+        <a href="/about">about</a>
+    </footer>
+    <script>
+        if (window.document.documentMode) {
+            var errorMessageEl = document.getElementById('error_message');
+
+            errorMessageEl.classList.add('show');
+            errorMessageEl.innerText = 'Internet Explorer is not supported';
+        }
+    </script>
+    <script src="/main.js?0012"></script>
+</body>
+
+</html>
